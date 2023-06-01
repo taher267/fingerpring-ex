@@ -1,0 +1,15 @@
+{
+  "name": "fingerprint-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-fingerprint": "^1.2.2"
+  }
+}
