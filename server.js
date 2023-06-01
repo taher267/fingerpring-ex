@@ -1,29 +1,29 @@
 const express = require("express");
 const cors = require("cors");
-const Fingerprint = require("express-fingerprint");
+// const Fingerprint = require("express-fingerprint");
 const app = express();
-const fingerp = Fingerprint({
-  parameters: [
-    // Defaults
-    Fingerprint.useragent,
-    Fingerprint.acceptHeaders,
-    Fingerprint.geoip,
+// const fingerp = Fingerprint({
+//   parameters: [
+//     // Defaults
+//     Fingerprint.useragent,
+//     Fingerprint.acceptHeaders,
+//     Fingerprint.geoip,
 
-    // Additional parameters
-    function (next) {
-      // ...do something...
-      next(null, {
-        param1: "value1",
-      });
-    },
-    function (next) {
-      // ...do something...
-      next(null, {
-        param2: "value2",
-      });
-    },
-  ],
-});
+//     // Additional parameters
+//     function (next) {
+//       // ...do something...
+//       next(null, {
+//         param1: "value1",
+//       });
+//     },
+//     function (next) {
+//       // ...do something...
+//       next(null, {
+//         param2: "value2",
+//       });
+//     },
+//   ],
+// });
 
 const middlwares = [
   express.urlencoded({ extended: true }),
