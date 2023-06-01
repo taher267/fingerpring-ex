@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-// const Fingerprint = require("express-fingerprint");
+const Fingerprint = require("express-fingerprint");
 const app = express();
 // const fingerp = Fingerprint({
 //   parameters: [
