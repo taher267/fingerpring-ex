@@ -27,7 +27,7 @@ const finger = Fingerprint({
 });
 const middlewires = [
     cors(),
-    finger,
+    // finger,
     express.urlencoded({ extended: true }),
     express.json(),
 ];
