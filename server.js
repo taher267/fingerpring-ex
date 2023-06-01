@@ -26,9 +26,9 @@ const fingerp = Fingerprint({
 });
 
 const middlwares = [
+  cors(),
   express.urlencoded({ extended: true }),
   express.json({ limit: "10mb" }),
-  cors(),
 ];
 
 app.use(middlwares);
