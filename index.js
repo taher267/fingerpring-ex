@@ -39,4 +39,5 @@ app.get("*", function (req, res, next) {
     // console.log(req.fingerprint);
     res.json(req.fingerprint);
 });
-app.listen(() => console.log(`Alhamdu lillah, server is starting`));
+const PORT = 5000;
+app.listen(PORT, () => console.log(`Alhamdu lillah, server is starting`));
