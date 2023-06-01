@@ -33,11 +33,20 @@ const middlewires = [
 ];
 
 app.use(middlewires);
-
-app.get("*", function (req, res, next) {
+app.get("/", function (req, res) {
+    // Fingerprint object
+    // console.log(req.fingerprint);
+    res.json({ message: `This is home route` });
+});
+app.get("/fingerprint", function (req, res, next) {
     // Fingerprint object
     // console.log(req.fingerprint);
     res.json(req.fingerprint);
+});
+app.get("*", function (req, res) {
+    // Fingerprint object
+    // console.log(req.fingerprint);
+    res.status(404).json({ message: `Nothing found` });
 });
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Alhamdu lillah, server is starting`));
