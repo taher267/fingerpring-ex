@@ -45,6 +45,9 @@ app.get("/", async (req, res) => {
     res.send({ e: e });
   }
 });
+app.get('/fingerprint', function (req, res,) {
+  req.json(req.fingerprint)
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`DEV SERVER IS RUNNING ON PORT: ${PORT} ❤️`);
