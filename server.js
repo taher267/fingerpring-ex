@@ -45,8 +45,8 @@ app.get("/", async (req, res) => {
     res.send({ e: e });
   }
 });
-app.get('/fingerprint', function (req, res,) {
-  req.json(req.fingerprint)
+app.get('/fingerprint', function (req, res) {
+  res.json(req.fingerprint)
 })
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
