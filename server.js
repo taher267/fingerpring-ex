@@ -1,7 +1,14 @@
+var geoip = require('geoip-lite');
 const express = require("express");
 const cors = require("cors");
 const Fingerprint = require("express-fingerprint");
 const app = express();
+
+
+// var ip = "15.165.248.236";
+// var geo = geoip.lookup(ip);
+
+// console.log(geo);
 const fingerp = Fingerprint({
   parameters: [
     // Defaults
@@ -38,8 +45,18 @@ app.use("/api/v1", require("./routes"));
 
 app.get("/", async (req, res) => {
   try {
+    const xforwarded = req.headers["x-forwarded-for"];
+    const remoteAddress = req?.connection?.remoteAddress;
+    const socketRepore = req.socket?.remoteAddress;
+    const connection = req?.connection?.socket?.remoteAddress;
+    const ip = req.ip
     res.send({
       runningOn: process.env.NODE_ENV,
+      xforwarded,
+      remoteAddress,
+      socketRepore,
+      connection,
+      ip,
     });
   } catch (e) {
     res.send({ e: e });
